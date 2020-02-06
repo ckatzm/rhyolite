@@ -44,7 +44,7 @@ use Rack::Cache do
 end
 
 get '/' do
-	erb :home, locals: { articles: index }
+	erb :home, locals: { articles: JSON.parse(index)['entries'] }
 end
 
 get '/articles/:id' do

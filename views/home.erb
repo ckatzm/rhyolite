@@ -1,2 +1,4 @@
 welcome home
-<%= articles %>
+<% articles.each do |article| %>
+	<a href="/articles/<%= article['name'] %>"><%= article['name']%></a>
+<% end %>
