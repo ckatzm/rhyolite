@@ -1,4 +1,7 @@
-welcome home
+<h3>Recent Posts</h3>
 <% articles.each do |article| %>
-	<a href="/articles/<%= article['name'] %>"><%= article['name']%></a>
+	<div class="container">
+		<a href="/articles/<%= article['name'] %>"><%= article['name']%></a>
+		&nbsp;<span>(<%= Date.parse(article['server_modified']) %>)</span>
+	</div>
 <% end %>

@@ -51,3 +51,15 @@ get '/articles/:id' do
 	puts article params['id']
 	erb :article, locals: { body: RedCloth.new(article(params['id'])).to_html }
 end
+
+get '/about' do
+	erb :about, locals: { body: RedCloth.new(about).to_html }
+end
+
+get '/contact' do
+	if ENV['EMAIL_INTEGRATION']
+		erb :email_form, locals: { body: RedCloth.new(contact).to_html }
+	else
+		erb :contact_basic, locals: { body: RedCloth.new(contact).to_html }
+	end
+end

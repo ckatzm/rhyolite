@@ -10,8 +10,58 @@
 
 html {
 	font-family: 'Montserrat', sans-serif;
+	background-color: #EACDC3;
+	color: #6E1415;
 }
 
 h1,h2,h3,h4,h5 {
 	font-family: 'Varela Round', sans-serif;
+}
+
+header, footer {
+	background-color: #D43B3C;
+	color: #E7A9A3;
+	margin-left: 0px;
+	margin-right: 0px;
+	line-height: 1rem;
+}
+
+nav {
+	display: flex;
+	justify-content: space-around;
+}
+
+header > nav {
+	position: sticky;
+	top: 0;
+}
+
+header, section > h3 {
+	text-align: center;
+}
+
+header > nav > a:link, header > nav > a:visited {
+	color: #E7A9A3;
+}
+
+footer > nav > a:link, footer > nav > a:visited {
+	color: #E7A9A3;
+}
+
+body > section {
+	min-height: 100vh;
+}
+
+body > section > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+body > section > div > a:link {
+	color: #BF3033;
+}
+
+body > section > div > a:visited {
+	color: #BF3033;
 }
