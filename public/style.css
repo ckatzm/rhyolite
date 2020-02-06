@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Varela Round';
+    src: url('/fonts/varela-round.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/montserrat-regular.ttf') format('truetype');
+}
+
+html {
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1,h2,h3,h4,h5 {
+	font-family: 'Varela Round', sans-serif;
+}

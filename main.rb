@@ -1,13 +1,14 @@
 require 'sinatra'
+require 'rack/cache'
 require 'net/http'
 require 'RedCloth'
 
 module DropboxFileHelpers
 	DROPBOX_API_URL = 'https://api.dropboxapi.com/2'
 	DROPBOX_CONTENT_URL = 'https://content.dropboxapi.com/2'
-	# TODO: Error code handling for http connections
+	# TODO: http error code handling, add logging too
 	def index
-		uri = URI(DROPBOX_API_URL + '/files/list_folder')
+	uri = URI(DROPBOX_API_URL + '/files/list_folder')
 		Net::HTTP.start(uri.host, uri.port, :use_ssl => true) do |http|
 			req = Net::HTTP::Post.new uri
 			req['Authorization'] = "Bearer #{ENV['DROPBOX_TOKEN']}"
@@ -35,6 +36,12 @@ if ENV.has_key? 'DROPBOX_TOKEN'
 	helpers DropboxFileHelpers
 end
 	
+use Rack::Cache do
+	set :verbose, true
+	set :metastore, 'file:/var/cache/rack/meta'
+	set :entitystore, 'file:/var/cache/rack/body'
+	set :allow_reload, true
+end
 
 get '/' do
 	erb :home, locals: { articles: index }

@@ -5,6 +5,8 @@ GEM
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     rack (2.1.2)
+    rack-cache (1.11.0)
+      rack (>= 0.4)
     rack-protection (2.0.8.1)
       rack
     ruby2_keywords (0.0.2)
@@ -20,6 +22,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth (~> 4)!
+  rack-cache (~> 1)!
   sinatra (~> 2)!
 
 BUNDLED WITH
