@@ -1,11 +1,16 @@
 @font-face {
-    font-family: 'Varela Round';
-    src: url('/fonts/varela-round.ttf') format('truetype');
+    font-family: 'Rubik';
+    src: url('/fonts/rubik-regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Montserrat';
     src: url('/fonts/montserrat-regular.ttf') format('truetype');
+}
+
+* {
+	margin: 0;
+	padding: 0;
 }
 
 html {
@@ -15,23 +20,29 @@ html {
 }
 
 h1,h2,h3,h4,h5 {
-	font-family: 'Varela Round', sans-serif;
+	font-family: 'Rubik', sans-serif;
+}
+
+header {
+	padding-top: 1rem;
+}
+
+footer {
+	padding-bottom: 0.5rem;
 }
 
 header, footer {
 	background-color: #D43B3C;
 	color: #E7A9A3;
-	margin-left: 0px;
-	margin-right: 0px;
-	line-height: 1rem;
 }
 
 nav {
 	display: flex;
 	justify-content: space-around;
+	padding: 0.5rem;
 }
 
-header > nav {
+header > nav  {
 	position: sticky;
 	top: 0;
 }
@@ -44,12 +55,61 @@ header > nav > a:link, header > nav > a:visited {
 	color: #E7A9A3;
 }
 
+footer > p {
+	text-align: center
+}
+
 footer > nav > a:link, footer > nav > a:visited {
 	color: #E7A9A3;
 }
 
 body > section {
-	min-height: 100vh;
+	padding: 1rem;
+	min-height: 76vh;
+}
+
+@media only screen and (min-width: 481px) {
+	body > section {
+		padding: 1.5rem;
+		padding-top: 1rem;
+	}
+}
+
+@media only screen and (min-width: 641px) {
+	body > section {
+		padding: 2rem;
+		padding-top: 1.5rem;
+	}
+}
+
+@media only screen and (min-width: 769px) {
+	body > section {
+		padding: 2.5rem;
+		padding-top: 2rem;
+	}
+}
+
+@media only screen and (min-width: 961px) {
+	body > section {
+		padding: 3rem;
+		padding-top: 2.5rem;
+	}
+}
+
+@media only screen and (min-width: 1025px) {
+	body > section {
+		padding: 3.5rem;
+		padding-top: 3rem;
+		min-height: 76vh;
+	}
+}
+
+@media only screen and (min-width: 1281px) {
+	body > section {
+		padding: 4rem;
+		padding-top: 3.5rem;
+		min-height: 76vh;
+	}
 }
 
 body > section > div {

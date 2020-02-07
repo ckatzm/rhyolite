@@ -1,7 +1,9 @@
-<h3>Recent Posts</h3>
-<% articles.each do |article| %>
-	<div class="container">
-		<a href="/articles/<%= article['name'] %>"><%= article['name']%></a>
-		&nbsp;<span>(<%= Date.parse(article['server_modified']) %>)</span>
+<h3>Posts</h3>
+<% posts.each do |post| %>
+	<div>
+		<a href="/posts/<%= File.basename(post['name'], '.*') + "?ext=#{File.extname(post['name'])}"%>">
+			<%= File.basename(post['name'], '.*') %>
+		</a>
+		&nbsp;<span>(<%= Date.parse(post['server_modified']) %>)</span>
 	</div>
 <% end %>

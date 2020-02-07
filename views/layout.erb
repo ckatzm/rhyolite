@@ -14,8 +14,8 @@
 			<h3><%= ENV['SITE_DESCRIPTION'] || 'A simple, robust blog engine that integrates with Dropbox.' %></h3>
 			<nav>
 				<a href="/"><h3>home</h3></a>
-				<a href="/about"><h3>about</h3></a>
-				<a href="/contact"><h3>contact</h3></a>
+				<a href="/site/about?ext=.txt"><h3>about</h3></a>
+				<a href="/site/contact?ext=.txt"><h3>contact</h3></a>
 			</nav>
 		</header>
 		<section>
@@ -24,9 +24,10 @@
 		<footer>
 			<nav>
 				<a href="/"><h3>home</h3></a>
-				<a href="/about"><h3>about</h3></a>
-				<a href="/contact"><h3>contact</h3></a>
+				<a href="/site/about?ext=.txt"><h3>about</h3></a>
+				<a href="/site/contact?ext=.txt"><h3>contact</h3></a>
 			</nav>
+			<p>Powered by Rhyolite: a lightweight blog engine that integrates with Dropbox.</p>
 		</footer>
 	</body>
 </html>
