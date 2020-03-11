@@ -7,3 +7,13 @@
 		&nbsp;<span>(<%= Date.parse(post['server_modified']) %>)</span>
 	</div>
 <% end %>
+
+<h3>Images</h3>
+<% images.each do |image| %>
+	<div>
+		<a href="/images/<%=image['name']%>">
+			<%= image['name'] %>
+		</a>
+		&nbsp;<span>(<%= Date.parse(image['server_modified']) %>)</span>
+	</div>
+<% end %>

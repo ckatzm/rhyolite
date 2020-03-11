@@ -29,6 +29,9 @@ header {
 
 footer {
 	padding-bottom: 0.5rem;
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
 }
 
 header, footer {
@@ -65,7 +68,6 @@ footer > nav > a:link, footer > nav > a:visited {
 
 body > section {
 	padding: 1rem;
-	min-height: 76vh;
 }
 
 @media only screen and (min-width: 481px) {
@@ -100,7 +102,6 @@ body > section {
 	body > section {
 		padding: 3.5rem;
 		padding-top: 3rem;
-		min-height: 76vh;
 	}
 }
 
@@ -108,7 +109,6 @@ body > section {
 	body > section {
 		padding: 4rem;
 		padding-top: 3.5rem;
-		min-height: 76vh;
 	}
 }
 

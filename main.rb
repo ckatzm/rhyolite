@@ -30,6 +30,11 @@ module DropboxFileHelpers
 			res.body
 		end
 	end
+	
+	private
+	
+	def api_request()
+	end
 end
 
 module RenderHelpers
@@ -56,7 +61,7 @@ use Rack::Cache do
 	set :verbose, true
 	set :metastore, 'file:/var/cache/rack/meta'
 	set :entitystore, 'file:/var/cache/rack/body'
-	if ENV['RUBY_ENV'] == 'dev'
+	if ENV['RACK_ENV'] == 'dev'
 		set :allow_reload, true
 	end
 end
@@ -71,5 +76,6 @@ get %r{/posts/.+|/site/.+} do
 end
 
 get '/images/:file' do
+	headers('Content-Type' => 'image/jpeg')
 	get_file request.path
 end
